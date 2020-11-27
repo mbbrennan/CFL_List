@@ -8,13 +8,13 @@ using Microsoft.EntityFrameworkCore;
 using RazorPagesMovie2.Data;
 using RazorPagesMovie2.Models;
 
-namespace RazorPagesMovie2.Pages
+namespace RazorPagesMovie2.Pages.Standings
 {
-    public class StandingsModel : PageModel
+    public class IndexModel : PageModel
     {
         private readonly RazorPagesMovie2.Data.RazorPagesMovie2Context _context;
 
-        public StandingsModel(RazorPagesMovie2.Data.RazorPagesMovie2Context context)
+        public IndexModel(RazorPagesMovie2.Data.RazorPagesMovie2Context context)
         {
             _context = context;
         }

@@ -1,0 +1,70 @@
+﻿@page
+@model RazorPagesMovie2.Pages.Standings.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Standing</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Standing.ID" />
+            <div class="form-group">
+                <label asp-for="Standing.LongName" class="control-label"></label>
+                <input asp-for="Standing.LongName" class="form-control" />
+                <span asp-validation-for="Standing.LongName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Standing.GP" class="control-label"></label>
+                <input asp-for="Standing.GP" class="form-control" />
+                <span asp-validation-for="Standing.GP" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Standing.Wins" class="control-label"></label>
+                <input asp-for="Standing.Wins" class="form-control" />
+                <span asp-validation-for="Standing.Wins" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Standing.Loses" class="control-label"></label>
+                <input asp-for="Standing.Loses" class="form-control" />
+                <span asp-validation-for="Standing.Loses" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Standing.Ties" class="control-label"></label>
+                <input asp-for="Standing.Ties" class="form-control" />
+                <span asp-validation-for="Standing.Ties" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Standing.Points" class="control-label"></label>
+                <input asp-for="Standing.Points" class="form-control" />
+                <span asp-validation-for="Standing.Points" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Standing.PointsFor" class="control-label"></label>
+                <input asp-for="Standing.PointsFor" class="form-control" />
+                <span asp-validation-for="Standing.PointsFor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Standing.PointsAgainst" class="control-label"></label>
+                <input asp-for="Standing.PointsAgainst" class="form-control" />
+                <span asp-validation-for="Standing.PointsAgainst" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
