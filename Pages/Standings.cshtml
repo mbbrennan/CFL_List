@@ -1,0 +1,78 @@
+﻿@page
+@model RazorPagesMovie2.Pages.StandingsModel
+
+@{
+    ViewData["Title"] = "Standings";
+}
+
+<h1>Standings</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Standing[0].LongName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Standing[0].GP)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Standing[0].Wins)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Standing[0].Loses)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Standing[0].Ties)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Standing[0].Points)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Standing[0].PointsFor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Standing[0].PointsAgainst)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Standing) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.LongName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Wins)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Loses)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ties)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Points)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PointsFor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PointsAgainst)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
