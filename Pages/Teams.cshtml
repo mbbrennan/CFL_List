@@ -1,0 +1,44 @@
+﻿@page
+@model RazorPagesMovie2.Pages.Teams.TeamsModel
+
+@{
+    ViewData["Title"] = "Teams";
+}
+
+<h3>About the CFL Database</h3>
+
+<br/>
+<br />
+I built a CFL database with all the teams in the league:
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Team[0].LongName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Team[0].City)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Team[0].Stadium)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Team) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.LongName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.City)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Stadium)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+I want to keep building on this but need to spend some time sketching out what I am trying to build.
